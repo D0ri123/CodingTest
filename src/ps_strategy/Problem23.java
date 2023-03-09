@@ -20,7 +20,7 @@ public class Problem23 {
   }
 
   public static Long getMedian(int n, int a, int b) {
-    Comparator<Long> maxComp = new Comparator<>() { // 최대힙 구현하는 comparator
+    Comparator<Long> maxComp = new Comparator<>() { // 최대힙 구현하는 comparator.
       @Override
       public int compare(Long o1, Long o2) {
         return (int) (o2 - o1);
