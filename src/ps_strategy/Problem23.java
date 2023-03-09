@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Problem23 {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
-    int c = sc.nextInt(); // 테케 수.
+    int c = sc.nextInt(); // 테케 수
 
     for(int i=0; i<c; i++) {
       int n = sc.nextInt(); // 수열의 길이
