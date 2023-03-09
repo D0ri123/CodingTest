@@ -44,7 +44,7 @@ public class Problem03 {
     }
 
     return pq.stream()
-        .mapToLong(i -> i*i)
+        .mapToLong(i -> i * i)
         .sum();
   }
 

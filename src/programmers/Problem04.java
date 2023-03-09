@@ -14,7 +14,7 @@ public class Problem04 {
   public int[] solution(int n) {
     int[] answer = new int[(n* (n+1))/2];
     // n번   내려가기 / n-1번 옆으로가기 / n-2번 올라가기
-    // n-3번 내려가기 / n-4번 옆으로가기 / n-5번 올라가기...
+    // n-3번 내려가기 / n-4번 옆으로가기 / n-5번 올라가기
     // n-n번이 될때까지
     int val = 1; int idx = 0; int cnt = 0;
     int stg = 0; // 0 Down 1 Side 2 Up

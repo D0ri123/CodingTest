@@ -5,7 +5,7 @@ import java.util.*;
 public class Problem01 {
   public static void main(String[] args){
     Problem01 problem01 = new Problem01();
-    int[] answer = problem01.solution(2,1); // n은 집합에 있는 자연수의 개수, s는 집합의 모든 원소의 합.
+    int[] answer = problem01.solution(2,1); // n은 집합에 있는 자연수의 개수, s는 집합의 모든 원소의 합
     System.out.println(Arrays.toString(answer));
   }
 

@@ -12,7 +12,7 @@ public class Problem23 {
     int c = sc.nextInt(); // 테케 수.
 
     for(int i=0; i<c; i++) {
-      int n = sc.nextInt(); // 수열의 길이.
+      int n = sc.nextInt(); // 수열의 길이
       int a = sc.nextInt(); // 수열을 생성하는 데 필요한 정수1 (a)
       int b = sc.nextInt(); // 수열을 생성하는 데 필요한 정수2 (b)
       System.out.println(getMedian(n, a, b));
