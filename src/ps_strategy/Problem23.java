@@ -27,7 +27,7 @@ public class Problem23 {
       }
     };
 
-    Comparator<Long> minComp = new Comparator<>() { // 최소힙 구현하는 comparator.
+    Comparator<Long> minComp = new Comparator<>() { // 최소힙 구현하는 comparator
       @Override
       public int compare(Long o1, Long o2) {
         return (int) (o1 - o2);
