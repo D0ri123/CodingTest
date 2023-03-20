@@ -22,7 +22,8 @@ public class Problem07 {
         int cnt = n - result.length();
         result = "0".repeat(cnt) + result;
       }
-      map[idx] = parsing(result, idx++);
+      map[idx] = result.replaceAll("1", "#").replaceAll("0", " ");
+      idx++;
     }
     return map;
   }
