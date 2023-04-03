@@ -56,34 +56,4 @@ public class Problem11 {
 
     return sb.toString();
   }
-
-  public int twoMid(int lt, int rt) {
-    int count = 2;
-    lt = lt-1;
-    rt = rt+1;
-    return counting(count, lt, rt);
-  }
-
-  public int oneMid(int mid) {
-    int count = 1;
-    int lt = mid - 1;
-    int rt = mid + 1;
-    return counting(count, lt, rt);
-  }
-
-  private int counting(int count, int lt, int rt) {
-    while(lt >= 0 && rt < arr.length) {
-      if(arr[lt].equals(arr[rt])) {
-        count = count+2;
-        if(lt == 0 || rt==arr.length-1) {
-          break;
-        } else {
-          lt--;
-          rt++;
-        }
-      } else break;
-    }
-    return count;
-  }
-
 }
