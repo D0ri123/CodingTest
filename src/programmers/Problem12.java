@@ -1,14 +1,24 @@
 package programmers;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
 
 //5,5) A=(11,2) B=(10,1
 //[100,1],[100,2],[50,1]
 //[3, 1], [1, 4], [2, 3], [2, 3], [1, 5], [1, 0], [1, 0]
 //{1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}
+class Score {
+  int attitude;
+  int rating;
+  boolean notExcepted;
+  public Score(int attitude, int rating, boolean notExcepted) {
+    this.attitude = attitude;
+    this.rating = rating;
+    this.notExcepted = notExcepted;
+  }
+}
+
 
 //인사고과
 public class Problem12 {
@@ -19,7 +29,7 @@ public class Problem12 {
   }
 
   public int solution(int[][] scores) {
-    Map<int[], Boolean> list = new HashMap<>();
+    ArrayList<Score> list = new ArrayList<>();
     int[] wanHo = scores[0];
     int wanhoScore = scores[0][0] + scores[0][1];
     int answer = 0;
@@ -34,22 +44,23 @@ public class Problem12 {
         return o2[0] - o1[0];
       }
     });
-    list.put(scores[0], true);
+    list.add(new Score(scores[0][0], scores[0][1], true));
 
     // 제외되는 사람을 map으로 기록한다.
     for(int i=1; i<scores.length; i++) {
       if(scores[i-1][1] > scores[i][1]) {
-        list.put(scores[i], false);
+        list.add(new Score(scores[i][0], scores[i][1], false));
         if(scores[i] == wanHo) return -1;
       } else {
-        list.put(scores[i], true);
+        list.add(new Score(scores[i][0], scores[i][1], true));
       }
     }
 
     // 완호가 인센티브를 받을 수 있다면 석차를 매긴다.
     for(int i=0; i<scores.length; i++) {
-      if(list.get(scores[i])) {
-        int score = scores[i][0] + scores[i][1];
+      Score s = list.get(i);
+      if(s.notExcepted) {
+        int score = s.attitude + s.rating;
         if(score > wanhoScore) {
           answer++;
         }
