@@ -24,7 +24,7 @@ class Score {
 public class Problem12 {
   public static void main(String[] args) {
     Problem12 sol = new Problem12();
-    int[][] scores = {{1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}};
+    int[][] scores = {{50, 5}, {40, 4}, {30, 100}};
     System.out.println(sol.solution(scores));
   }
 
