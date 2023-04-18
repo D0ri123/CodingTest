@@ -13,17 +13,12 @@ public class Problem17 {
   }
 
   public int solution(int[][] sizes) {
-    int[] height = new int[sizes.length];
-    int[] width = new int[sizes.length];
-
     int maxW = Integer.MIN_VALUE;
     int maxH = Integer.MIN_VALUE;
 
     for(int i=0; i<sizes.length; i++) {
-      width[i] = Math.max(sizes[i][0], sizes[i][1]);
-      height[i] = Math.min(sizes[i][0], sizes[i][1]);
-      maxH = Math.max(maxH, height[i]);
-      maxW = Math.max(maxW, width[i]);
+      maxH = Math.max(maxH, Math.min(sizes[i][0], sizes[i][1]));
+      maxW = Math.max(maxW, Math.max(sizes[i][0], sizes[i][1]));
     }
 
     return maxW * maxH;
