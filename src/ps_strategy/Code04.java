@@ -33,6 +33,9 @@ public class Code04 {
       }
     }
 
+    if(person == null || dog == null) { // 2 혹은 3이 존재하지 않는 경우
+      return 0;
+    }
 
     while(time < 10000) {
       time++;
@@ -42,10 +45,6 @@ public class Code04 {
       int dogY = dog.y + dy[dog.d];
       boolean flagP = true;
       boolean flagD = true;
-
-      if(px == dogX && py == dogY) {
-        return time;
-      }
 
       if(!isValidXY(px, py, board)) {
         person.d = (person.d + 1) % 4;
@@ -65,6 +64,10 @@ public class Code04 {
       if(flagD) {
         dog.x = dogX;
         dog.y = dogY;
+      }
+
+      if(person.x == dog.x && person.y == dog.y) {
+        return time;
       }
     }
     return 0;
