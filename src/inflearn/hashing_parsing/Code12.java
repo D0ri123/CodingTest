@@ -1,4 +1,4 @@
-package ps_strategy;
+package inflearn;
 
 //한번만 사용한 최초 문자
 
