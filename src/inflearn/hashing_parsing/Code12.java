@@ -1,4 +1,4 @@
-package inflearn;
+package inflearn.hashing_parsing;
 
 //한번만 사용한 최초 문자
 
