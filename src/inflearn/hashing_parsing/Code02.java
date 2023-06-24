@@ -10,17 +10,20 @@ public class Code02 {
   public int[] solution(String s){
     int[] answer = new int[5];
     char[] chars = {'a','b','c','d','e'};
+
     Map<Character, Integer> map = new HashMap<>();
-    int count = 0;
 
-    for(char ch : s.toCharArray()) {
-      map.put(ch, map.getOrDefault(ch, 0) + 1);
-      count = Math.max(count, map.get(ch));
-    }
+    int count = s.chars()
+        .mapToObj(ch -> (char) ch)
+        .peek(ch -> map.put(ch, map.getOrDefault(ch, 0) + 1))
+        .mapToInt(ch -> map.get(ch))
+        .max()
+        .orElse(0);
 
-    for(int i=0; i<5; i++) {
-      answer[i] = map.containsKey(chars[i]) ? count - map.get(chars[i]) : count;
-    }
+    answer = new String(chars).chars()
+        .mapToObj(i -> (char)i)
+        .mapToInt(ch -> count - map.getOrDefault(ch, 0))
+        .toArray();
 
     return answer;
   }
